@@ -20,3 +20,32 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+TEST(TicTacToeBoardTest, toggleOne)
+{
+	TicTacToeBoard obj;
+	Piece outcome = obj.toggleTurn();
+	ASSERT_EQ(outcome, O);
+}
+TEST(TicTacToeBoardTest, toggleTwo)
+{
+	TicTacToeBoard obj;
+	Piece outcome = obj.toggleTurn();
+	outcome = obj.toggleTurn();
+	ASSERT_EQ(outcome, X);
+}
+TEST(TicTacToeBoardTest, toggleThree)
+{
+	TicTacToeBoard obj;
+	Piece outcome = obj.toggleTurn();
+	outcome = obj.toggleTurn();
+	outcome = obj.toggleTurn();
+	ASSERT_EQ(outcome, O);
+}
+
+
+TEST(TicTacToeBoardTest, placeRowOver2)
+{
+	TicTacToeBoard obj;
+	Piece outcome = obj.placePiece(3,2);
+	ASSERT_EQ(outcome, Invalid);
+}
